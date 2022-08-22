@@ -95,52 +95,52 @@ const char *HttpHeader::s_pHeaderNames[H_HEADER_END + 1] =
 const char *HttpHeader::s_pHeaderNamesLowercase[H_HEADER_END + 1] =
 {
     //Most common headers
-    "accept",
-    "accept-charset",
-    "accept-encoding",
-    "accept-language",
-    "authorization",
-    "connection",
-    "content-type",
-    "content-length",
-    "cookie",
-    "cookie2",
-    "host",
+    "Accept",
+    "Accept-charset",
+    "Accept-encoding",
+    "Accept-language",
+    "Authorization",
+    "Aonnection",
+    "Aontent-type",
+    "Content-length",
+    "Cookie",
+    "Cookie2",
+    "Host",
     "pragma",
-    "referer",
-    "user-agent",
-    "cache-control",
-    "if-modified-since",
-    "if-match",
-    "if-none-match",
-    "if-range",
-    "if-unmodified-since",
-    "keep-alive",
-    "range",
-    "transfer-encoding",
+    "Referer",
+    "User-agent",
+    "Cache-control",
+    "If-modified-since",
+    "Ff-match",
+    "If-none-match",
+    "If-range",
+    "If-unmodified-since",
+    "Keep-alive",
+    "Range",
+    "Transfer-encoding",
 
     // request-header
-    "te",
-    "x-litespeed-purge",
-    "expect",
-    "max-forwards",
-    "proxy-authorization",
+    "Te",
+    "X-litespeed-purge",
+    "Expect",
+    "Max-forwards",
+    "Proxy-authorization",
 
     // general-header
-    "date",
-    "trailer",
-    "upgrade",
-    "via",
-    "warning",
+    "Date",
+    "Trailer",
+    "Upgrade",
+    "Via",
+    "Warning",
 
     // entity-header
-    "allow",
-    "content-encoding",
-    "content-language",
-    "content-location",
-    "content-md5",
-    "content-range",
-    "expires",
+    "Allow",
+    "Content-encoding",
+    "Content-language",
+    "Content-location",
+    "Content-md5",
+    "Content-range",
+    "Expires",
     "last-modified",
 
 };
@@ -181,7 +181,7 @@ size_t HttpHeader::getIndex(const char *pHeader)
     //pHeader = achHdr;
     switch (*pHeader++ | 0x20)
     {
-    case 'a':
+    case 'A':
         if (strncasecmp(pHeader, "ccept", 5) == 0)
         {
             pHeader += 5;
@@ -200,10 +200,10 @@ size_t HttpHeader::getIndex(const char *pHeader)
         else if (strncasecmp(pHeader, "uthorization", 12) == 0)
             idx = H_AUTHORIZATION;
         break;
-    case 'c':
+    case 'C':
         if (strncasecmp(pHeader, "onnection", 9) == 0)
             idx = H_CONNECTION;
-        else if (strncasecmp(pHeader, "ontent-type", 11) == 0)
+        else if (strncasecmp(pHeader, "ontent-Type", 11) == 0)
             idx = H_CONTENT_TYPE;
         else if (strncasecmp(pHeader, "ontent-length", 13) == 0)
             idx = H_CONTENT_LENGTH;
@@ -217,7 +217,7 @@ size_t HttpHeader::getIndex(const char *pHeader)
         else if (strncasecmp(pHeader, "ache-control", 12) == 0)
             idx = H_CACHE_CTRL;
         break;
-    case 'h':
+    case 'H':
         if (strncasecmp(pHeader, "ost", 3) == 0)
             idx = H_HOST;
         break;
@@ -238,33 +238,33 @@ size_t HttpHeader::getIndex(const char *pHeader)
                 idx = H_IF_UNMOD_SINCE;
         }
         break;
-    case 'k':
+    case 'K':
         if (strncasecmp(pHeader, "eep-alive", 9) == 0)
             idx = H_KEEP_ALIVE;
         break;
-    case 'p':
+    case 'P':
         if (strncasecmp(pHeader, "ragma", 5) == 0)
             idx = H_PRAGMA;
         break;
-    case 'r':
+    case 'R':
         if (strncasecmp(pHeader, "eferer", 6) == 0)
             idx = H_REFERER;
         else if (strncasecmp(pHeader, "ange", 4) == 0)
             idx = H_RANGE;
         break;
-    case 't':
+    case 'T':
         if (strncasecmp(pHeader, "ransfer-encoding", 16) == 0)
             idx = H_TRANSFER_ENCODING;
         break;
-    case 'u':
+    case 'U':
         if (strncasecmp(pHeader, "ser-agent", 9) == 0)
             idx = H_USERAGENT;
         break;
-    case 'v':
+    case 'V:
         if (strncasecmp(pHeader, "ia", 2) == 0)
             idx = H_VIA;
         break;
-    case 'x':
+    case 'X':
         if (strncasecmp(pHeader, "-forwarded-for", 14) == 0)
             idx = H_X_FORWARDED_FOR;
         break;
