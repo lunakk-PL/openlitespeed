@@ -608,7 +608,7 @@ inline void appendLowerCase(char *dest, const char *src, int n)
 {
     const char *end = src + n;
     while (src < end)
-        *dest++ = tolower(*src++);
+        *dest++ = *src++;
 }
 
 
@@ -639,7 +639,7 @@ int UnpackedHeaders::appendHeader(int index, const char *name, int name_len,
     }
     else
     {
-        //appendLowerCase(m_buf->end(), name, name_len);
+        appendLowerCase(m_buf->end(), name, name_len);
         m_buf->used(name_len);
         m_buf->append_unsafe(':');
         m_buf->append_unsafe(' ');

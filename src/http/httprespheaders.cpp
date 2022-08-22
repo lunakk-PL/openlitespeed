@@ -272,7 +272,7 @@ inline void appendLowerCase(char *dest, const char *src, int n)
 {
     const char *end = src + n;
     while (src < end)
-        *dest++ = tolower(*src++);
+        *dest++ = *src++;
 }
 
 
@@ -383,7 +383,7 @@ int HttpRespHeaders::appendHeader(lsxpack_header *pKv, int hdr_idx, const char *
     pUpdKv->app_index = hdr_idx;
     if (hdr_idx != H_HEADER_END)
         pUpdKv->flags = (lsxpack_flag)(pUpdKv->flags | LSXPACK_APP_IDX);
-    //appendLowerCase(m_buf.end(), pName, len);
+    appendLowerCase(m_buf.end(), pName, len);
     m_buf.used(len);
     m_buf.append_unsafe(':');
     m_buf.append_unsafe(' ');
