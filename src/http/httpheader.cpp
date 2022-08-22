@@ -100,8 +100,8 @@ const char *HttpHeader::s_pHeaderNamesLowercase[H_HEADER_END + 1] =
     "Accept-encoding",
     "Accept-language",
     "Authorization",
-    "Aonnection",
-    "Aontent-type",
+    "Connection",
+    "Content-type",
     "Content-length",
     "Cookie",
     "Cookie2",
@@ -111,7 +111,7 @@ const char *HttpHeader::s_pHeaderNamesLowercase[H_HEADER_END + 1] =
     "User-agent",
     "Cache-control",
     "If-modified-since",
-    "Ff-match",
+    "If-match",
     "If-none-match",
     "If-range",
     "If-unmodified-since",
@@ -141,7 +141,7 @@ const char *HttpHeader::s_pHeaderNamesLowercase[H_HEADER_END + 1] =
     "Content-md5",
     "Content-range",
     "Expires",
-    "last-modified",
+    "Last-modified",
 
 };
 
