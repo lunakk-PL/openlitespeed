@@ -221,7 +221,7 @@ size_t HttpHeader::getIndex(const char *pHeader)
         if (strncasecmp(pHeader, "ost", 3) == 0)
             idx = H_HOST;
         break;
-    case 'i':
+    case 'I':
         if (((*pHeader | 0x20) == 'f') &&
             (*(pHeader + 1) == '-'))
         {
@@ -260,7 +260,7 @@ size_t HttpHeader::getIndex(const char *pHeader)
         if (strncasecmp(pHeader, "ser-agent", 9) == 0)
             idx = H_USERAGENT;
         break;
-    case 'V:
+    case 'V':
         if (strncasecmp(pHeader, "ia", 2) == 0)
             idx = H_VIA;
         break;
